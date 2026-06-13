@@ -1,1039 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>7 Month Celebration</title>
-
+<title>Happy 7 Months ❤️</title>
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
 body{
-
-height:100vh;
-
-overflow:hidden;
-
-color:white;
-
-background:linear-gradient(
--45deg,
-#ff9a9e,
-#fad0c4,
-#fbc2eb,
-#a18cd1
-);
-
+height:100vh;overflow:hidden;color:white;
+background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);
 background-size:400% 400%;
-
-animation:bgMove 12s ease infinite;
-
+animation:bg 12s ease infinite;
 }
-
-@keyframes bgMove{
-
-0%{background-position:0% 50%;}
-
-50%{background-position:100% 50%;}
-
-100%{background-position:0% 50%;}
-
-}
-
-.screen{
-
-display:none;
-
-height:100vh;
-
-overflow-y:auto;
-
-justify-content:flex-start;
-
-align-items:center;
-
-flex-direction:column;
-
-text-align:center;
-
-padding:40px 25px;
-
-}
-
-.active{
-
-display:flex;
-
-}
-
-h1{
-
-font-size:3.5rem;
-
-margin-bottom:20px;
-
-text-shadow:0 0 15px white;
-
-margin-top:50px;
-
-}
-
-.subtitle{
-
-max-width:800px;
-
-line-height:1.8;
-
-font-size:1.2rem;
-
-margin-bottom:30px;
-
-}
-
-.btn{
-
-padding:15px 35px;
-
-border:none;
-
-border-radius:40px;
-
-cursor:pointer;
-
-font-size:1rem;
-
-font-weight:bold;
-
-background:white;
-
-color:#ff4d88;
-
-transition:.3s;
-
-margin-top:20px;
-
-}
-
-.btn:hover{
-
-transform:scale(1.08);
-
-}
-
-.card{
-
-background:rgba(255,255,255,.15);
-
-backdrop-filter:blur(10px);
-
-padding:30px;
-
-border-radius:25px;
-
-width:90%;
-max-width:850px;
-
-margin-bottom:30px;
-
-}
-
-.question{
-
-font-size:2rem;
-
-margin-bottom:20px;
-
-}
-
-.option{
-
-display:block;
-
-width:100%;
-
-padding:15px;
-
-margin:10px 0;
-
-border:none;
-
-border-radius:15px;
-
-cursor:pointer;
-
-font-size:1rem;
-
-}
-
-.paragraphBox{
-
-background:rgba(255,255,255,.15);
-
-padding:30px;
-
-border-radius:25px;
-
-width:90%;
-max-width:850px;
-
-line-height:2;
-
-font-size:1.15rem;
-
-margin-bottom:20px;
-
-max-height:70vh;
-
-overflow-y:auto;
-
-}
-
-.message{
-
-margin-top:20px;
-
-font-weight:bold;
-
-font-size:1.1rem;
-
-}
-
-.hearts{
-
-position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-pointer-events:none;
-
-overflow:hidden;
-
-}
-
-.heart{
-
-position:absolute;
-
-bottom:-50px;
-
-animation:rise linear forwards;
-
-}
-
-@keyframes rise{
-
-to{
-
-transform:
-translateY(-110vh)
-rotate(360deg);
-
-opacity:0;
-
-}
-
-}
-
-::-webkit-scrollbar{
-
-width:8px;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:white;
-
-border-radius:20px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:rgba(255,255,255,0.15);
-
-}
-
+@keyframes bg{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+.screen{display:none;height:100vh;justify-content:center;align-items:center;flex-direction:column;text-align:center;padding:20px}
+.active{display:flex}
+.card,.box{background:rgba(255,255,255,.15);backdrop-filter:blur(10px);padding:25px;border-radius:20px;max-width:850px;width:90%}
+h1{font-size:3rem;margin-bottom:15px}
+.btn{padding:14px 30px;border:none;border-radius:30px;cursor:pointer;margin-top:15px;font-weight:bold}
+.option{display:block;width:100%;padding:12px;margin:8px 0;border:none;border-radius:12px;cursor:pointer}
+.hearts{position:fixed;inset:0;pointer-events:none}
+.heart{position:absolute;bottom:-30px;animation:rise linear forwards}
+@keyframes rise{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+input{padding:12px;border-radius:10px;border:none;width:280px;text-align:center}
 </style>
-
 </head>
-
 <body>
 
 <audio id="bgMusic" loop>
-
-<source src="C:\Users\HP\Downloads\music.mp3.mp3" type="audio/mpeg">
-
+<source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <div class="hearts" id="hearts"></div>
 
-<!-- SCREEN 1 -->
-
-<div class="screen active" id="screen1">
-
+<div id="s1" class="screen active">
 <h1>Happy 7 Months ❤️</h1>
-
-<p class="subtitle">
-
-A special journey has been prepared.
-
-Press the button below and begin.
-
-</p>
-
-<button
-class="btn"
-onclick="startJourney()">
-
-Begin The Journey ✨
-
-</button>
-
+<div class="box">
+<p>Seven beautiful months, countless memories, and a journey worth celebrating.</p>
+<button class="btn" onclick="startJourney()">Begin The Journey ✨</button>
+</div>
 </div>
 
-<!-- SCREEN 2 -->
-
-<div class="screen" id="screen2">
-
+<div id="s2" class="screen">
 <div class="card">
-
-<div class="question">
-
-What was the first thing i said to you?
-
+<h2>YOUR QUESTION 1 HERE</h2><br>
+<button class="option" onclick="wrong('m1')">Option A</button>
+<button class="option" onclick="nextScreen('m1','s3',true)">Option B</button>
+<button class="option" onclick="wrong('m1')">Option C</button>
+<button class="option" onclick="wrong('m1')">Option D</button>
+<p id="m1"></p>
+</div>
 </div>
 
-<button class="option" onclick="wrongAnswer()">
-Hiii
-</button>
-
-<button class="option" onclick="quiz1Correct()">
-Hello
-</button>
-
-<button class="option" onclick="wrongAnswer()">
-Whats up?
-</button>
-
-<button class="option" onclick="wrongAnswer()">
-Its good to see your courage;
-</button>
-
-<div
-class="message"
-id="quizMessage">
-
+<div id="s3" class="screen">
+<div class="box">PASTE YOUR FIRST SPECIAL PARAGRAPH HERE.</div>
+<button class="btn" onclick="show('s4')">Continue ❤️</button>
 </div>
 
-</div>
-
-</div>
-
-<!-- SCREEN 3 -->
-
-<div class="screen" id="screen3">
-
-<div class="paragraphBox">
-
-Wow! 🥹💕 You got it right! But honestly, this wasn't really a test, jaan. 🫠 It was just my little way of celebrating seven wonderful months with someone who means the world to me. 😭💝 Thank you for all the smiles, support, care, and unforgettable memories. 🥹💕 You make life brighter, more fun, and so much more special every single day. Happy 7 Months, my queen! 👑❤️
-
-</div>
-
-<button
-class="btn"
-onclick="showScreen('screen4')">
-
-Continue ❤️
-
-</button>
-
-</div>
-
-<!-- SCREEN 4 -->
-
-<div class="screen" id="screen4">
-
+<div id="s4" class="screen">
 <div class="card">
-
-<div class="question">
-
-What is the thing which makes our bond the most luckiest?
-
+<h2>YOUR QUESTION 2 HERE</h2><br>
+<button class="option" onclick="wrong('m2')">Option A</button>
+<button class="option" onclick="wrong('m2')">Option B</button>
+<button class="option" onclick="nextScreen('m2','s5',true)">Option C</button>
+<button class="option" onclick="wrong('m2')">Option D</button>
+<p id="m2"></p>
+</div>
 </div>
 
-<button class="option" onclick="wrongAnswer2()">
-Relationship 
-</button>
-
-<button class="option" onclick="wrongAnswer2()">
-Calling eachother by nicknames
-</button>
-
-<button class="option" onclick="quiz2Correct()">
-Our understanding and the way we love eachother
-</button>
-
-<button class="option" onclick="wrongAnswer2()">
-Our way of chatting and talking
-</button>
-
-<div
-class="message"
-id="quizMessage2">
-
+<div id="s5" class="screen">
+<div class="box">PASTE YOUR SECOND SPECIAL PARAGRAPH HERE.</div>
+<button class="btn" onclick="show('s6')">Continue ✨</button>
 </div>
 
-</div>
-
-</div>
-
-<!-- SCREEN 5 -->
-
-<div class="screen" id="screen5">
-
-<div class="paragraphBox">
-
-Okay, so as you're here... 🥹💝 I just want to say, Happy Seven Months to my princess ❤️🥰 The thing that makes our bond so unique is the way we understand and love each other, jaani. 🥹💕 The way we face every problem together 😭, the way we care for each other 🥹, and the way we are each other's Jubee and Ubu 😭❤️—that's something I feel truly blessed to have. Thank you so much for being in my life, my love. 💕 Every moment with you has become a beautiful memory that I cherish deeply. 🥹💝 And today, on our 7-month milestone, I want to make a promise: No matter what happens, I will always be your Jubee. ♾️🎉❤️ Happy 7 Months, jaani! 🥹👑💕 Ab toh kar do na please... say cheeeese! 😆📸💕 Ayyy, dekho toh meri dulhan ko! 🥹💝❤️ Muahh muahh! 😭💕👑✨
-
-</div>
-
-<button
-class="btn"
-id="part2Button">
-
-Continue To Next Chapter ✨
-
-</button>
-
-</div>
-<script>
-
-/* THEMES */
-
-const themes = [
-
-"linear-gradient(-45deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1)",
-
-"linear-gradient(-45deg,#667eea,#764ba2,#6a11cb,#2575fc)",
-
-"linear-gradient(-45deg,#ff758c,#ff7eb3,#ffb199,#ff0844)",
-
-"linear-gradient(-45deg,#43cea2,#185a9d,#00c9ff,#92fe9d)",
-
-"linear-gradient(-45deg,#f7971e,#ffd200,#ff9966,#ff5e62)",
-
-"linear-gradient(-45deg,#4facfe,#00f2fe,#43e97b,#38f9d7)"
-
-];
-
-let currentTheme = 0;
-
-/* CHANGE THEME */
-
-function nextTheme(){
-
-currentTheme++;
-
-if(currentTheme >= themes.length){
-
-currentTheme = 0;
-
-}
-
-document.body.style.background =
-themes[currentTheme];
-
-document.body.style.backgroundSize =
-"400% 400%";
-
-}
-
-/* SHOW SCREEN */
-
-function showScreen(screenId){
-
-let screens =
-document.querySelectorAll(".screen");
-
-screens.forEach(screen=>{
-
-screen.classList.remove("active");
-
-});
-
-document
-.getElementById(screenId)
-.classList
-.add("active");
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-nextTheme();
-
-}
-
-/* START JOURNEY */
-
-function startJourney(){
-
-let music =
-document.getElementById("bgMusic");
-
-music.volume = 0.3;
-
-music.play().catch(()=>{});
-
-showScreen("screen2");
-
-}
-
-/* QUIZ 1 */
-
-function quiz1Correct(){
-
-document
-.getElementById("quizMessage")
-.innerHTML =
-"✨ Correct!";
-
-setTimeout(()=>{
-
-showScreen("screen3");
-
-},1200);
-
-}
-
-function wrongAnswer(){
-
-document
-.getElementById("quizMessage")
-.innerHTML =
-"❤️ Try Again";
-
-}
-
-/* QUIZ 2 */
-
-function quiz2Correct(){
-
-document
-.getElementById("quizMessage2")
-.innerHTML =
-"✨ Correct Again!";
-
-setTimeout(()=>{
-
-showScreen("screen5");
-
-},1200);
-
-}
-
-function wrongAnswer2(){
-
-document
-.getElementById("quizMessage2")
-.innerHTML =
-"❤️ That's not correct";
-
-}
-
-/* FLOATING HEARTS */
-
-const heartsContainer =
-document.getElementById("hearts");
-
-function createHeart(){
-
-const heart =
-document.createElement("div");
-
-heart.classList.add("heart");
-
-const symbols = [
-
-"❤️",
-"💖",
-"💕",
-"💞",
-"💗",
-"✨"
-
-];
-
-heart.innerHTML =
-symbols[
-Math.floor(
-Math.random()
-*
-symbols.length
-)
-];
-
-heart.style.left =
-Math.random()*100
-+
-"vw";
-
-heart.style.fontSize =
-(
-20 +
-Math.random()*25
-)
-+
-"px";
-
-heart.style.animationDuration =
-(
-6 +
-Math.random()*6
-)
-+
-"s";
-
-heartsContainer
-.appendChild(heart);
-
-setTimeout(()=>{
-
-heart.remove();
-
-},12000);
-
-}
-
-setInterval(
-createHeart,
-500
-);
-
-</script>
-<!-- SCREEN 6 : SECRET PUZZLE -->
-
-<div class="screen" id="screen6">
-
-<h1>🔐 Secret Puzzle</h1>
-
+<div id="s6" class="screen">
 <div class="card">
-
-<p class="subtitle">
-
-Enter the special secret word that is the combo of our nicknames to unlock the next chapter.
-
-</p>
-
-<input
-id="puzzleInput"
-type="text"
-placeholder="Enter secret word..."
-style="
-padding:15px;
-width:300px;
-border:none;
-border-radius:15px;
-font-size:1rem;
-text-align:center;
-">
-
+<h2>🔐 Secret Puzzle</h2><br>
+<p>A nickname created by combining our names unlocks the next chapter.</p><br>
+<input id="secret" placeholder="Enter nickname">
 <br><br>
-
-<button
-class="btn"
-onclick="checkPuzzle()">
-
-Unlock ❤️
-
-</button>
-
-<div
-id="puzzleMessage"
-class="message">
-
+<button class="btn" onclick="checkPuzzle()">Unlock ❤️</button>
+<p id="pm"></p>
+</div>
 </div>
 
+<div id="s7" class="screen">
+<h1>What I Like About You ❤️</h1>
+<div class="box">POINT 1</div><br>
+<div class="box">POINT 2</div><br>
+<div class="box">POINT 3</div><br>
+<button class="btn" onclick="show('s8')">Continue</button>
 </div>
 
+<div id="s8" class="screen">
+<h1>Special Memories ✨</h1>
+<div class="box">MEMORY 1</div><br>
+<div class="box">MEMORY 2</div><br>
+<button class="btn" onclick="countdown()">Final Surprise ❤️</button>
 </div>
 
-<!-- CELEBRATION POPUP -->
-
-<div
-id="celebrationPopup"
-
-style="
-display:none;
-position:fixed;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-background:white;
-color:#ff4d88;
-padding:40px;
-border-radius:25px;
-font-size:2rem;
-font-weight:bold;
-z-index:9999;
-box-shadow:0 0 40px white;
-">
-
-🎉 Chapter Unlocked! 🎉
-
+<div id="s9" class="screen">
+<h1 id="count">5</h1>
+<p>Something special is coming...</p>
 </div>
 
-<!-- SCREEN 7 -->
-
-<div class="screen" id="screen7">
-
-<h1>✨ Things I love about you ✨</h1>
-
-<div class="paragraphBox">
-
-First of all, your smile, jaani... 🥹💝 Your smile is honestly one of the most beautiful things I have ever seen. 😭❤️ It's more satisfying than solving a physics equation when you finally understand it, and more beautiful than a perfectly timed lofted straight drive in cricket. 🥹🏏✨ Itni pyari hai na, jaan, ke uss ek smile ke liye main itni mehnat se ye sab bana raha hoon. 😭💝 Your smile means so much to me and seeing you happy is one of my favorite things in the world. 🥹💕 So please, once again, jaan... 🥺👉👈 Say cheeeeseeee! 😆📸💖 Awww, look at my darling smiling... 🥹😭💕 Ummmmah! 😭💋💋❤️✨
-
-</div>
-
-<button
-class="btn"
-onclick="showScreen('screen8')">
-
-Continue ➜
-
-</button>
-
-</div>
-
-<!-- SCREEN 8 -->
-
-<div class="screen" id="screen8">
-
-<h1>✨ One more... ✨</h1>
-
-<div class="paragraphBox">
-
-The next thing is the way you deal with my angry side, jaani. 🥹❤️ Mujhe pata hai, jaan, jab main gussa hota hoon na, kabhi kabhi main aapko bohat kuch keh deta hoon. 🥺😭 Aur mujhe pata hai ke uss waqt aapko kitna hurt hota hoga. 🥺💔 Lekin phir bhi, the way you treat me at that time... 🥹 the way you stay, the way you understand me, and the way you continue loving me 💓 is something that makes my soul calm, jaani. 🥰✨ Mujhe lagta hai unn namazon aur duaaon ka hi nateeja hai ke mujhe aap mili ho. 😭🤲💝 And I am forever grateful for that, jaan. 🥹❤️ The way you make me feel is something nobody else ever has. 😭💕 You make me feel understood, cared for, and loved in ways I never imagined. Thank you so much for everything, my love. 🥹🎉💕 Aur main promise karta hoon ke main har din ek better insaan aur better Jubee banne ki koshish karunga, sirf aapke liye. ♾️❤️🥹
-
-</div>
-
-<button
-class="btn"
-onclick="showScreen('screen9')">
-
-
-
-Continue
-
-</button>
-
-</div>
-
-<!-- SCREEN 9 -->
-
-<div class="screen" id="screen9">
-
-<h1>✨ Another one... ✨</h1>
-
-<div class="paragraphBox">
-
-And the 3rd thing is your emotional intelligence, jaani. 🥰💝 Main kitna lucky hoon na, ke mujhe itni understanding wifey mili hai. 🥹❤️ Jaani, log aapse help maangte hain, aapse suggestions lete hain, aur honestly, main yeh sab notice karta hoon. 🥹💕 The way you handle situations, the way you think, and the way you guide others is truly amazing. Because everyone knows that my Ubu is so intelligent. 🥰✨ The way you solve your own problems and help others solve theirs 🥹❤️, the way you care for the people around you 😭💕—that's something very rare these days, jaani. Your empathy, your understanding, and your ability to see things from other people's perspectives 🥹💝 are such beautiful qualities. Not everyone has a heart like yours. And do you know what makes me happiest? 🥹❤️ You are lucky to have such wonderful qualities, and I am even luckier to have a girl like you in my life. ❣️😭 Thank you for existing, jaan. 🥹💝✨ Thank you for being you, and thank you for making the lives of everyone around you brighter—including mine. ❤️♾️🥰
-
-</div>
-
-<button
-class="btn"
-onclick="showScreen('screen10')">
-
-Continue ➜
-
-</button>
-
-</div>
-
-<!-- SCREEN 10 -->
-
-<div class="screen" id="screen10">
-
-<h1>📖 Memory One</h1>
-
-<div class="paragraphBox">
-
-So, talking about the memories, jaani... 🥰💝 They are honestly uncountable. 😭❤️ Kyunki aapke aane ke baad meri life mein itna kuch badla hai na, jaan 🥹✨, jiske liye main hamesha shukr guzar rahunga. 🫠🥰 But if I had to choose my favorite memory among all of them, it would be the day I received your very first "Hiii." 🥹💋 I still remember it, jaani. 😭❤️ That night, my heart was racing like an Arabian horse. 🥹💘 The moment I saw your message, I couldn't stop smiling. 😭💕 Little did I know that a simple "Hiii" would become the beginning of one of the most beautiful chapters of my life. 🥹✨ That was the day, jaani, from where my life truly started changing. 😭❤️ It's one of the luckiest days I have ever lived, because it brought you into my life. ❣️🥰🫠 And if I could go back and relive one moment again and again, it would be that moment when your "Hiii" appeared on my screen and unknowingly changed my whole world. 🥹💝♾️❤️
-
-</div>
-
-<button
-class="btn"
-onclick="showScreen('screen11')">
-
-Next Memory ➜
-
-</button>
-
-</div>
-
-<!-- SCREEN 11 -->
-
-<div class="screen" id="screen11">
-
-<h1>📖 That awesome day</h1>
-
-<div class="paragraphBox">
-
-Secondly, what made this journey so special was the first day of school after the vacations. 😭❤️ Itna sabr kiya tha na, jaan... 3 whole months sirf aapko dekhne ke liye. 🥹🥰 And then, the moment I saw that gleaming face, those oceanic eyes, and that beautiful smile... 🥹💝😭 Honestly, it felt like I had gotten my life back after three long months. 🥰❤️ All the waiting suddenly became worth it. And then there was that gift box... 🥹🎁💕 Jaani, how can I ever thank you enough for that? 😭❤️ You made me feel so special and so loved. Those letters, those snacks, that hair tie... 🥹💝 Every single thing meant so much to me because it came from you. It honestly felt like a dream, jaan. 🥹✨ A dream that I never wanted to wake up from. Thank you for every effort, every little surprise, and every bit of love that you put into it. 😭💕 I still smile whenever I think about that day, because it wasn't just a gift box—it was a box full of memories, care, and love from my favorite person in the world. 🥹❤️♾️🥰
-
-</div>
-
-<button
-class="btn"
-onclick="showScreen('screen12')">
-
-Next Memory ➜
-
-</button>
-
-</div>
-
-<!-- SCREEN 12 -->
-
-<div class="screen" id="screen12">
-
-<h1>📖 Those pretty eyes</h1>
-
-<div class="paragraphBox">
-
-And last but definitely not the least, jaani... 🥹🥰** That school program we had... 💕😭 I honestly don't remember what day it was, jaan 🥲, but I do remember that we were together under that assembly shed. 🥹❤️ And that day was so special to me because it was the first time I got to see my jaan for so long. 😭🥰 For the first time, I got so much time to just look into your beautiful eyes and get lost in them. 🥹💝 I still remember how whenever someone came and stood between us, we would get so annoyed. 😭😂 We just wanted them to move away so we could see each other again. And then, as soon as they moved... There it was again. That beautiful smiling face. 🥹🥹❤️ Ayyy... 😭💕 Tell me, jaani, what could possibly be more beautiful than that? 🥹💝 These are some of my favorite memories from our journey together. They are moments that I will always carry in my heart, no matter how much time passes. 🥹❤️♾️ Thank you for giving me memories so beautiful that even years from now, thinking about them will still make me smile. 😭💕🥰
-
-</div>
-
-<button
-class="btn"
-onclick="startCountdown()">
-
-Final Surprise ❤️
-
-</button>
-
-</div>
-
-<!-- SCREEN 13 : COUNTDOWN -->
-
-<div class="screen" id="screen13">
-
-<h1
-id="countdownNumber"
-style="font-size:8rem;">
-
-5
-
-</h1>
-
-</div>
-
-<!-- SCREEN 14 : FINAL -->
-
-<div class="screen" id="screen14">
-
-<h1>❤️ Final Message ❤️</h1>
-
-<div class="paragraphBox">
-
-And finally, jaani... 🥹💝 If you've read everything till here, then there's just one thing left that I want to say. 😭❤️ These 7 months were never just "7 months" for me. They were 7 months of smiles. 🥹💕 7 months of waiting for your texts. 😭💌 7 months of caring for someone more than I care for myself. 🫠❤️ 7 months of having a person who made ordinary days feel special. 🥹✨ Jaani, I don't know what the future holds for us. Nobody does. 🥺 But what I do know is that meeting you was one of the most beautiful things that ever happened to me. 😭💝 You became my comfort when I was upset. 🥹❤️ My happiness when I was smiling. 🥰💕 And my favorite person to tell every little thing to. 😭💌 If one day I become successful, if one day I achieve my dreams, if one day I become the person I want to be... then I want you to know that a part of that journey will always belong to you. 🥹💝 Because you were there. You listened. You cared. You stayed. ❤️ And that's something I can never thank you enough for. 😭 So today, on our 7 months, I don't have a grand promise to make. I just promise that every day I'll try to be a better Jubee than I was yesterday. 🥹♾️❤️ Thank you for every smile. Thank you for every memory. Thank you for every moment. And most importantly... Thank you for being my Ubu. 🥹💝 Happy 7 Months, my love. ❤️👑✨
-
-</div>
-
+<div id="s10" class="screen">
+<h1>❤️ Happy 7 Months ❤️</h1>
+<div class="box">WRITE YOUR FINAL MESSAGE HERE</div>
 </div>
 
 <script>
-
-/* OPEN PUZZLE */
-
-document
-.getElementById("part2Button")
-.onclick = function(){
-
-showScreen("screen6");
-
-};
-
-/* SECRET WORD */
-
-const secretWord = "JUBUU";
-
+function show(id){
+document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+function startJourney(){
+document.getElementById('bgMusic').play().catch(()=>{});
+show('s2');
+}
+function wrong(id){document.getElementById(id).innerText='Try again ❤️';}
+function nextScreen(msg,id){
+document.getElementById(msg).innerText='Correct! ✨';
+setTimeout(()=>show(id),1200);
+}
 function checkPuzzle(){
-
-let answer =
-
-document
-.getElementById("puzzleInput")
-.value
-.trim()
-.toUpperCase();
-
-if(answer === secretWord){
-
-launchCelebration();
-
+let v=document.getElementById('secret').value.trim().toUpperCase();
+if(v==='JUBUU'){
+document.getElementById('pm').innerText='Unlocked! ✨';
+setTimeout(()=>show('s7'),1200);
 }else{
-
-document
-.getElementById("puzzleMessage")
-.innerHTML =
-"❌ Incorrect. Try again.";
-
+document.getElementById('pm').innerText='Wrong nickname ❤️';
 }
-
 }
-
-/* CELEBRATION */
-
-function launchCelebration(){
-
-let popup =
-
-document
-.getElementById(
-"celebrationPopup"
-);
-
-popup.style.display =
-"block";
-
-for(let i=0;i<100;i++){
-
-createConfetti();
-
-}
-
-setTimeout(()=>{
-
-popup.style.display =
-"none";
-
-showScreen("screen7");
-
-},2500);
-
-}
-
-/* CONFETTI */
-
-function createConfetti(){
-
-let item =
-document.createElement("div");
-
-const symbols =
-
-["🎉","🎊","✨","💖","💕"];
-
-item.innerHTML =
-
-symbols[
-Math.floor(
-Math.random()*
-symbols.length
-)
-];
-
-item.style.position =
-"fixed";
-
-item.style.left =
-Math.random()*100 +
-"vw";
-
-item.style.top =
-"-20px";
-
-item.style.fontSize =
-(
-20 +
-Math.random()*30
-)
-+
-"px";
-
-item.style.zIndex =
-9999;
-
-document.body.appendChild(
-item
-);
-
-let fall = setInterval(()=>{
-
-item.style.top =
-
-(
-parseFloat(
-item.style.top
-)
-+
-5
-)
-+
-"px";
-
-},20);
-
-setTimeout(()=>{
-
-clearInterval(fall);
-
-item.remove();
-
-},3500);
-
-}
-
-/* COUNTDOWN */
-
-function startCountdown(){
-
-showScreen("screen13");
-
-let count = 5;
-
-let timer = setInterval(()=>{
-
-count--;
-
-document
-.getElementById(
-"countdownNumber"
-)
-.innerHTML = count;
-
-if(count <= 0){
-
-clearInterval(timer);
-
-showScreen("screen14");
-
-}
-
+function countdown(){
+show('s9');
+let n=5;
+let t=setInterval(()=>{
+n--;
+document.getElementById('count').innerText=n;
+if(n<=0){clearInterval(t);show('s10');}
 },1000);
-
 }
-
+setInterval(()=>{
+let h=document.createElement('div');
+h.className='heart';
+h.innerHTML=['❤️','💖','💕','✨'][Math.floor(Math.random()*4)];
+h.style.left=Math.random()*100+'vw';
+h.style.fontSize=(20+Math.random()*20)+'px';
+h.style.animationDuration=(6+Math.random()*5)+'s';
+document.getElementById('hearts').appendChild(h);
+setTimeout(()=>h.remove(),11000);
+},500);
 </script>
-
 </body>
 </html>
